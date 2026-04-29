@@ -1,63 +1,3 @@
-# Mexico City Urban Growth Analysis (2005–2022)
-Geospatial machine learning project analyzing urban expansion in Mexico City and identifying priority zones for green infrastructure investment.
-
-## Overview
-A geospatial machine learning project analyzing historical urban expansion in Mexico City, forecasting future growth pressure, and identifying priority zones for green infrastructure intervention.
-
-## Objective
-To quantify urban sprawl, predict likely future development areas, and propose sustainability-focused interventions.
-
-## Tools Used
-- Google Earth Engine
-- JavaScript
-- Landsat 7/8
-- Random Forest Classification
-- SRTM DEM
-- Spatial Modeling
-- GIS Multi-Criteria Analysis
-
-## Part 1: Urban Change Detection
-Landsat composites for 2005 and 2022 were classified into:
-- Urban
-- Bare Soil
-- Vegetation
-- Water
-
-### Results
-- 249.91 km² of new urban land detected
-- Expansion concentrated along peripheral edges
-- Vegetation was the most displaced land cover type
-
-## Part 2: Growth Prediction Model
-A probabilistic model predicted future development likelihood using:
-
-- Distance to urban areas
-- Elevation
-- Slope
-
-### Findings
-Distance to existing urban land was the strongest predictor.
-
-## Part 3: Green Infrastructure Intervention Strategy
-A weighted suitability index identified high-priority investment zones based on:
-
-- Growth probability (40%)
-- Distance from green space (30%)
-- Slope (20%)
-- Land cover type (10%)
-
-### Result
-Top 8% of scores selected as priority zones.
-
-## Policy Value
-These areas help mitigate:
-- Urban heat island effects
-- Stormwater runoff risk
-- Unequal access to green space
-
-## Skills Demonstrated
-Remote sensing, machine learning, spatial analysis, sustainability planning, environmental decision-making
-
 # Urban Expansion Analysis & Green Infrastructure Planning
 ### Mexico City Metropolitan Area, 2005–2022
 
@@ -77,8 +17,6 @@ A complete geospatial data science pipeline analyzing urban growth in one of the
 | 01 · Detection | Part 1 | Landsat imagery classified via Random Forest to map urban land cover change 2005–2022 |
 | 02 · Prediction | Part 2 | Spatial predictive model using distance to urban areas, elevation & slope to forecast future urbanization probability |
 | 03 · Intervention | Part 3 | Multi-criteria weighted suitability analysis to prioritize green infrastructure investment zones |
-
----
 
 ## Key Findings
 
@@ -129,10 +67,7 @@ A complete geospatial data science pipeline analyzing urban growth in one of the
 | Analysis | Change detection, spatial prediction, weighted overlay |
 | Domain | Remote sensing, urban growth modeling, green infrastructure planning |
 
----
-
 ## [Google Earth Engine Script](https://code.earthengine.google.com/f0074bde701c88ae8f506393d2856579)
-
 
 ---
 
@@ -153,4 +88,4 @@ These areas help mitigate:
 
 ## Study Area
 
-**Mexico City Metropolitan Area (ZMVM)**, Mexico — one of the largest urban agglomerations in the world, characterized by a mountainous surrounding geography, rapid peri-urban expansion, and mixed land cover including dense urban core, agricultural land, and forested slopes.
+**Mexico City Metropolitan Area (CDMX), Mexico** is one of the largest urban agglomerations in the world, characterized by a mountainous surrounding geography, rapid peri-urban expansion, and mixed land cover including dense urban core, agricultural land, and forested slopes.
