@@ -1,91 +1,76 @@
-# Urban Expansion Analysis & Green Infrastructure Planning
-### Mexico City Metropolitan Area, 2005–2022
 
-**Course:** Pixelizing Societies from Space &nbsp;|&nbsp; **Author:** Conner Jackson &nbsp;|&nbsp; **Spring 2026**
 
----
+# Mexico City Urban Growth Analysis (2005–2022)
 
 ## Overview
-A complete geospatial data science pipeline analyzing urban growth in one of the world's largest metropolitan areas. The project spans satellite image classification, predictive machine learning modeling, and multi-criteria spatial optimization, yielding both quantitative findings and an actionable green infrastructure intervention strategy for Mexico City (CDMX).
+Geospatial machine learning project analyzing historical urban expansion in Mexico City, forecasting future development pressure, and identifying priority zones for green infrastructure investment.
 
----
-
-## Project Pipeline
-
-| Stage | Report | Description |
-|-------|--------|-------------|
-| 01 · Detection | Part 1 | Landsat imagery classified via Random Forest to map urban land cover change 2005–2022 |
-| 02 · Prediction | Part 2 | Spatial predictive model using distance to urban areas, elevation & slope to forecast future urbanization probability |
-| 03 · Intervention | Part 3 | Multi-criteria weighted suitability analysis to prioritize green infrastructure investment zones |
-
-## Key Findings
-
-- 249.91 km² of land converted to urban use between 2005 and 2022
-- Growth was primarily continuous and outward from the existing urban core, consistent with urban sprawl
-- Distance to existing urban areas was the strongest predictor of future growth, followed by elevation and slope
-- Most displaced land was previously vegetated or semi-natural
-- The top 8% of suitability values (threshold ≈ 0.44) were identified as priority zones for green infrastructure, clustered along the urban periphery
-
----
+## Project Objective
+This project combines remote sensing, predictive spatial modeling, and sustainability planning to evaluate how Mexico City has expanded and where future growth may create environmental stress.
 
 ## Methods
 
-### Part 1 — Land Cover Change Detection
-- Filtered and composited **Landsat 7/8** imagery for 2005 and 2022 to minimize cloud cover
-- Applied supervised Random Forest classification with manually selected training samples across four classes: urban, vegetation, bare soil, and water
-- Compared classified outputs to produce a change detection map, where pixels transitioning from non-urban to urban were flagged as expansion
-- Calculated total urban expansion area in km²
+### Part 1 — Urban Change Detection
+Landsat 7/8 satellite composites for 2005 and 2022 were classified into four land-cover categories:
 
-### Part 2 — Urban Growth Probability Modeling
-- Derived a binary change layer from Report 1 (1 = urbanized, 0 = unchanged) as the dependent variable
-- Engineered three spatial predictor variables:
-  - Distance to existing urban areas (computed from Report 1 classification)
-  - Elevation (SRTM dataset)
-  - Slope (derived from SRTM)
-- Trained a Random Forest model (10 trees) on 70% of sampled pixels; evaluated on the remaining 30%
-- Output: a continuous probability surface representing the likelihood of future urbanization
+- Urban
+- Bare Soil
+- Vegetation
+- Water
 
-### Part 3 — Green Infrastructure Suitability Optimization
-- Constructed a weighted multi-criteria suitability index from four normalized variables:
-  - Urban growth probability — 40%
-  - Distance from existing green space (vegetation proxy) — 30%
-  - Slope — 20%
-  - Current land cover (non-urban prioritized) — 10%
-- Defined **intervention zones** as the top 8% of suitability scores (threshold ≈ 0.44)
-- Proposed targeted parks and permeable green spaces to mitigate urban heat island effects, flooding risk, and inequitable green space access
+A Random Forest classifier trained on manually selected samples was used to generate land-cover maps and quantify change over time.
 
----
+### Key Result
+- 249.91 km² of new urban land added between 2005 and 2022
+- Expansion concentrated along the metropolitan fringe
+- Vegetation was the primary displaced land-cover type
+
+### Part 2 — Growth Prediction
+A probabilistic urban growth model was developed using:
+
+- Distance to existing urban areas
+- Elevation (SRTM)
+- Slope
+
+A 70/30 train-test split evaluated predictive performance.
+
+### Key Result
+Distance to existing urban land was the strongest predictor of future expansion.
+
+### Part 3 — Green Infrastructure Targeting
+A weighted multi-criteria suitability index was constructed using:
+
+- Urban growth probability (40%)
+- Distance from green space (30%)
+- Slope (20%)
+- Land cover type (10%)
+
+The top 8% of scores were identified as priority intervention zones.
+
+### Policy Value
+Recommended areas can help mitigate:
+
+- Urban heat island intensification
+- Reduced stormwater absorption
+- Unequal green space access
 
 ## Tools & Technologies
 
-| Category | Tools |
-|----------|-------|
-| Platform | Google Earth Engine (JavaScript API) |
-| Imagery | Landsat 7/8 composites |
-| Elevation | SRTM (Shuttle Radar Topography Mission) |
-| Modeling | Random Forest (supervised classification & regression) |
-| Analysis | Change detection, spatial prediction, weighted overlay |
-| Domain | Remote sensing, urban growth modeling, green infrastructure planning |
+- Google Earth Engine
+- JavaScript
+- Landsat 7/8
+- Random Forest Classification
+- SRTM DEM
+- GIS Spatial Analysis
+- Remote Sensing
 
-***[Google Earth Engine Script](https://code.earthengine.google.com/f0074bde701c88ae8f506393d2856579)***
+## Repository Structure
 
----
+/scripts – Google Earth Engine code and workflows  
+/maps – exported maps and visual outputs  
+/data – summary tables and exported datasets  
+/report – final written report or presentation assets
 
-## Limitations
+## Skills Demonstrated
 
-- The predictive model relies solely on physical/spatial variables and does not incorporate socioeconomic factors (income, population density, policy constraints)
-- The model assumes future growth will follow historical patterns, which may not hold under changing conditions
-- Vegetation was used as a proxy for green space, which may not reflect actual public park access
-- Classification accuracy is subject to errors from training data quality, seasonal variation in imagery, and mixed pixels at urban edges
-
-## Policy Value
-These areas help mitigate:
-- Urban heat island effects
-- Stormwater runoff risk
-- Unequal access to green space
-
----
-
-## Study Area
-
-**Mexico City Metropolitan Area (CDMX), Mexico** is one of the largest urban agglomerations in the world, characterized by a mountainous surrounding geography, rapid peri-urban expansion, and mixed land cover including dense urban core, agricultural land, and forested slopes.
+Remote sensing, geospatial analytics, machine learning, environmental planning, data visualization, sustainability strategy
