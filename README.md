@@ -131,7 +131,7 @@ A complete geospatial data science pipeline analyzing urban growth in one of the
 
 ---
 
-[## Google Earth Engine Script](https://code.earthengine.google.com/f0074bde701c88ae8f506393d2856579)
+## [Google Earth Engine Script](https://code.earthengine.google.com/f0074bde701c88ae8f506393d2856579)
 
 
 ---
