@@ -21,7 +21,7 @@ A complete geospatial data science pipeline analyzing urban growth in one of the
 ## Key Findings
 
 - **249.91 km²** of land converted to urban use between 2005 and 2022
-- Growth was primarily **continuous and outward** from the existing urban core — consistent with urban sprawl
+- Growth was primarily **continuous and outward** from the existing urban core, consistent with urban sprawl
 - **Distance to existing urban areas** was the strongest predictor of future growth, followed by elevation and slope
 - Most displaced land was previously **vegetated or semi-natural**
 - The top **8% of suitability values** (threshold ≈ 0.44) were identified as priority zones for green infrastructure, clustered along the urban periphery
@@ -42,8 +42,8 @@ A complete geospatial data science pipeline analyzing urban growth in one of the
   - Distance to existing urban areas (computed from Report 1 classification)
   - Elevation (SRTM dataset)
   - Slope (derived from SRTM)
-- Trained a **Random Forest model (10 trees)** on 70% of sampled pixels; evaluated on remaining 30%
-- Output: a **continuous probability surface** representing likelihood of future urbanization
+- Trained a **Random Forest model (10 trees)** on 70% of sampled pixels; evaluated on the remaining 30%
+- Output: a **continuous probability surface** representing the likelihood of future urbanization
 
 ### Part 3 — Green Infrastructure Suitability Optimization
 - Constructed a **weighted multi-criteria suitability index** from four normalized variables:
