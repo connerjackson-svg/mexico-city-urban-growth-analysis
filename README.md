@@ -20,11 +20,11 @@ A complete geospatial data science pipeline analyzing urban growth in one of the
 
 ## Key Findings
 
-- **249.91 km²** of land converted to urban use between 2005 and 2022
-- Growth was primarily **continuous and outward** from the existing urban core, consistent with urban sprawl
-- **Distance to existing urban areas** was the strongest predictor of future growth, followed by elevation and slope
-- Most displaced land was previously **vegetated or semi-natural**
-- The top **8% of suitability values** (threshold ≈ 0.44) were identified as priority zones for green infrastructure, clustered along the urban periphery
+- 249.91 km² of land converted to urban use between 2005 and 2022
+- Growth was primarily continuous and outward from the existing urban core, consistent with urban sprawl
+- Distance to existing urban areas was the strongest predictor of future growth, followed by elevation and slope
+- Most displaced land was previously vegetated or semi-natural
+- The top 8% of suitability values (threshold ≈ 0.44) were identified as priority zones for green infrastructure, clustered along the urban periphery
 
 ---
 
@@ -32,8 +32,8 @@ A complete geospatial data science pipeline analyzing urban growth in one of the
 
 ### Part 1 — Land Cover Change Detection
 - Filtered and composited **Landsat 7/8** imagery for 2005 and 2022 to minimize cloud cover
-- Applied **supervised Random Forest classification** with manually selected training samples across four classes: urban, vegetation, bare soil, and water
-- Compared classified outputs to produce a **change detection map**, where pixels transitioning from non-urban to urban were flagged as expansion
+- Applied supervised Random Forest classification with manually selected training samples across four classes: urban, vegetation, bare soil, and water
+- Compared classified outputs to produce a change detection map, where pixels transitioning from non-urban to urban were flagged as expansion
 - Calculated total urban expansion area in km²
 
 ### Part 2 — Urban Growth Probability Modeling
@@ -42,11 +42,11 @@ A complete geospatial data science pipeline analyzing urban growth in one of the
   - Distance to existing urban areas (computed from Report 1 classification)
   - Elevation (SRTM dataset)
   - Slope (derived from SRTM)
-- Trained a **Random Forest model (10 trees)** on 70% of sampled pixels; evaluated on the remaining 30%
-- Output: a **continuous probability surface** representing the likelihood of future urbanization
+- Trained a Random Forest model (10 trees) on 70% of sampled pixels; evaluated on the remaining 30%
+- Output: a continuous probability surface representing the likelihood of future urbanization
 
 ### Part 3 — Green Infrastructure Suitability Optimization
-- Constructed a **weighted multi-criteria suitability index** from four normalized variables:
+- Constructed a weighted multi-criteria suitability index from four normalized variables:
   - Urban growth probability — 40%
   - Distance from existing green space (vegetation proxy) — 30%
   - Slope — 20%
@@ -67,7 +67,7 @@ A complete geospatial data science pipeline analyzing urban growth in one of the
 | Analysis | Change detection, spatial prediction, weighted overlay |
 | Domain | Remote sensing, urban growth modeling, green infrastructure planning |
 
-## [Google Earth Engine Script](https://code.earthengine.google.com/f0074bde701c88ae8f506393d2856579)
+***[Google Earth Engine Script](https://code.earthengine.google.com/f0074bde701c88ae8f506393d2856579)***
 
 ---
 
