@@ -64,12 +64,11 @@ Recommended areas can help mitigate:
 - GIS Spatial Analysis
 - Remote Sensing
 
-## Repository Structure
+## Links
 
-/scripts – Google Earth Engine code and workflows  
-/maps – exported maps and visual outputs  
-/data – summary tables and exported datasets  
-/report – final written report or presentation assets
+[View GEE script](maps/)    
+[View all maps](maps/)  
+[View all reports](maps/)  
 
 ## Skills Demonstrated
 
