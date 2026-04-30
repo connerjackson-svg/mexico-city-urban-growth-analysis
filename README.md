@@ -68,7 +68,7 @@ Recommended areas can help mitigate:
 
 [View GEE script](https://code.earthengine.google.com/943435be106a0fb97b19b71dbddbc1f3)    
 [View all maps](maps/)  
-[View all full report](maps/)  
+[View all full reports](reports/)  
 
 ## Skills Demonstrated
 
